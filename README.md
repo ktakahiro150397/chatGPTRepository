@@ -1,0 +1,2 @@
+# chatGPTRepository
+Discord Bot経由でコミットされるリポジトリです
