@@ -1,6 +1,6 @@
 cpp
 #include <iostream>
-#include <exception>
+#include <string>
 
 using namespace std;
 
@@ -13,24 +13,19 @@ T sumArray(T *arr, int size) {
     return sum;
 }
 
-int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    try {
-        int sum = sumArray(arr, size);
-        cout << "Sum of array: " << sum << endl;
-    } catch (const char* msg) {
-        cerr << msg << endl;
+int stringArrayLength(string *arr, int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i].length();
     }
+    return sum;
+}
 
-    double doubleArr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
-    size = sizeof(doubleArr) / sizeof(doubleArr[0]);
-    try {
-        double doubleSum = sumArray(doubleArr, size);
-        cout << "Sum of double array: " << doubleSum << endl;
-    } catch (const char* msg) {
-        cerr << msg << endl;
-    }
+int main() {
+    string arr[] = {"a", "b", "c"};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int sum = stringArrayLength(arr, size);
+    cout << "Sum of string array: " << sum << endl;
 
     return 0;
 }
